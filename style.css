@@ -1,0 +1,188 @@
+*{
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    perspective: 1600px;
+    perspective-origin: left top;
+    background: rgb(0,0,255);
+    background: linear-gradient(180deg, rgba(0,0,255,1) 0%, rgba(122,122,252,1) 50%, rgba(200,200,255,1) 100%);
+  }
+  /* plansza */
+  .squere{
+      position: relative;
+      display: flex;
+      flex-flow: row wrap;
+      width:845px;
+      height: 845px;
+    }
+  .squere > div{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  .active{
+      background-color: #a52a2a;
+      border: 1px solid #000000;
+    }
+    .buttons{
+      align-self: flex-end;
+      display: flex;
+    }
+    .button{
+      padding: 10px 20px;
+      margin-top: 10px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: transparent;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      background-color: rgba(122,122,252,1);
+      color: #ffffff;
+      transition: background-color 0.75s ease-in;
+      cursor: pointer;
+    }
+    .restart:hover{
+      background-color: #ffffff;
+      color: rgba(122,122,252,1);
+    }
+    /* ufoludek */
+    .ufo__wrapper{
+      position: absolute;
+      z-index: 999;
+      background-color: #008000;
+    }
+    .ufo{
+        position: relative;
+    }
+    .ufo__ear{
+      height: 55px;
+      width: 10px;
+      background-color: #008000;
+      position: absolute;
+      top:-50px;
+      border: 1px solid black;
+    }
+    .ufo__earleft{
+      left: 30px;
+    }
+    .ufo__earRight{
+      right: -10px;
+    }
+    
+    .ufo__earCircle{
+      background-color: rgb(10, 233, 10);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      border: 1px solid black;
+    }
+    .ufo__face {
+      position: relative;
+      width: 100px;
+      height: 150px;
+      border: 1px solid black;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      background-color: rgb(52, 122, 52);
+      margin: 0 auto;
+    }
+    .ufo__eye{
+      position: absolute;
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ufo__eyeLeft{
+      left: 50px;
+    }
+    .ufo__eye > div{
+      border-radius: 999px;
+      background-color: blue;
+      width: 10px;
+      height: 10px;
+    }
+    .ufo__eyeRight{
+      right: 50px;
+    }
+    
+    .ufo__mouth {
+      position: absolute;
+      width: 80px;
+      height: 40px;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+      border: 10px solid #f96d8e;
+      border-top: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    
+    .ufo__hand{
+      width: 10px;
+      height: 120px;
+      background-color: green;
+      position: absolute;
+      border: 1px solid black;
+    }
+    
+    .ufo__handLeft{
+      transform: rotateX(50deg);
+      left:-10px;
+      z-index: -1;
+      top: -40px;
+    }
+    .ufo__handRight{
+      transform: rotateX(60deg);
+      right: -50px;
+      z-index: -1;
+      top: 5px;
+    }
+    .ufo__leg{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    animation: leg ease-in 0.75s infinite;
+    border: 1px solid #000000;
+    }
+    .ufo__legRight{
+      right: -40px;
+    }
+    
+    @keyframes leg{
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100%{
+        transform: rotateZ(360deg);
+      }
+    }
