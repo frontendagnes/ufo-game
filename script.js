@@ -7,11 +7,11 @@ let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 let ball = [];
 let index = 0;
-let activeIndex = 0
+let activeIndex = 0;
 function randomActive() {
   for (let i = 0; i <= 8; i++) {
     activeIndex = Math.floor(Math.random() * squere.length);
-    squere[activeIndex].classList.add("active");  
+    squere[activeIndex].classList.add("active");
   }
 
   // let i = 0;
@@ -24,95 +24,101 @@ function randomActive() {
 randomActive();
 
 squere.forEach((item) => {
-    if (item.classList.contains("active")) {
-      ball.push(item);
-    }
-  });
-  console.log(ball);
-  
-  const restart = () => {
-    // ball.forEach(item => {
-    //     item.classList.remove("active")
-    // })
-    // console.log("restart>>>", ball)
-    location.reload();
-  };
-  const mniamBall = () => {
-    for (let i = 0; i < ball.length; i++) {
-      // console.log(`left>> ${ball[i].offsetLeft} top>> ${ball[i].offsetTop} +10 ${ball[i].offsetTop + 10}`)
-  
-      let numberLeft = ball[i].offsetLeft;
-      numberLeft += 5 - (numberLeft % 5);
-  
-      let numberTop = ball[i].offsetTop;
-      numberTop += 5 - (numberTop % 5);
-  
-      // if (parseInt(moveEl.style.left) === ball[i].offsetLeft &&
-      //     (parseInt(moveEl.style.top) === ball[i].offsetTop)) {
-      //     ball[i].classList.remove("active")
-      // }
-      if (
-        parseInt(moveEl.style.left) === numberLeft &&
-        parseInt(moveEl.style.top) === numberTop
-      ) {
-        ball[i].classList.remove("active");
-      }
-    }
-  };
+  if (item.classList.contains("active")) {
+    ball.push(item);
+  }
+});
+console.log(ball);
 
-  function moveLeft() {
-    if (parseInt(moveEl.style.left) === 0) {
-      moveEl.style.left = 0 + "px";
-    } else {
-      moveEl.style.left = parseInt(moveEl.style.left) - 5 + "px";
-    }
-    mniamBall();
-  }
-  
-  function moveRight() {
-    if (parseInt(moveEl.style.left) >= windowWidth) {
-      moveEl.style.left = 0 + "px";
-    } else {
-      moveEl.style.left = parseInt(moveEl.style.left) + 5 + "px";
-    }
-    mniamBall();
-  }
-  
-  function moveUp() {
-    if (parseInt(moveEl.style.top) === 0) {
-      moveEl.style.top = 0 + "px";
-    } else {
-      moveEl.style.top = parseInt(moveEl.style.top) - 5 + "px";
-    }
-    mniamBall();
-  }
-  
-  function moveDown() {
-    if (parseInt(moveEl.style.top) >= windowHeight) {
-      moveEl.style.top = 0 + "px";
-    } else {
-      moveEl.style.top = parseInt(moveEl.style.top) + 5 + "px";
-    }
-    mniamBall();
-  }
+const restart = () => {
+  // ball.forEach(item => {
+  //     item.classList.remove("active")
+  // })
+  // console.log("restart>>>", ball)
+  location.reload();
+};
+const mniamBall = () => {
+  for (let i = 0; i < ball.length; i++) {
+    // console.log(`left>> ${ball[i].offsetLeft} top>> ${ball[i].offsetTop} +10 ${ball[i].offsetTop + 10}`)
 
-  function arrowSelection(e) {
-    switch (e.keyCode) {
-      case 37:
-        moveLeft();
-  
-        break;
-      case 39:
-        moveRight();
-  
-        break;
-      case 38:
-        moveUp();
-  
-        break;
-      case 40:
-        moveDown();
-  
-        break;
+    let numberLeft = ball[i].offsetLeft;
+    numberLeft += 5 - (numberLeft % 5);
+
+    let numberTop = ball[i].offsetTop;
+    numberTop += 5 - (numberTop % 5);
+
+    // if (parseInt(moveEl.style.left) === ball[i].offsetLeft &&
+    //     (parseInt(moveEl.style.top) === ball[i].offsetTop)) {
+    //     ball[i].classList.remove("active")
+    // }
+    if (
+      parseInt(moveEl.style.left) === numberLeft &&
+      parseInt(moveEl.style.top) === numberTop
+    ) {
+      ball[i].classList.remove("active");
     }
   }
+};
+
+function moveLeft() {
+  if (parseInt(moveEl.style.left) === 0) {
+    moveEl.style.left = 0 + "px";
+  } else {
+    moveEl.style.left = parseInt(moveEl.style.left) - 5 + "px";
+  }
+  mniamBall();
+}
+
+function moveRight() {
+  if (parseInt(moveEl.style.left) >= windowWidth) {
+    moveEl.style.left = 0 + "px";
+  } else {
+    moveEl.style.left = parseInt(moveEl.style.left) + 5 + "px";
+  }
+  mniamBall();
+}
+
+function moveUp() {
+  if (parseInt(moveEl.style.top) === 0) {
+    moveEl.style.top = 0 + "px";
+  } else {
+    moveEl.style.top = parseInt(moveEl.style.top) - 5 + "px";
+  }
+  mniamBall();
+}
+
+function moveDown() {
+  if (parseInt(moveEl.style.top) >= windowHeight) {
+    moveEl.style.top = 0 + "px";
+  } else {
+    moveEl.style.top = parseInt(moveEl.style.top) + 5 + "px";
+  }
+  mniamBall();
+}
+
+function arrowSelection(e) {
+  switch (e.keyCode) {
+    case 37:
+      moveLeft();
+
+      break;
+    case 39:
+      moveRight();
+
+      break;
+    case 38:
+      moveUp();
+
+      break;
+    case 40:
+      moveDown();
+
+      break;
+  }
+}
+
+reset.addEventListener("click", restart);
+function moveReady() {
+  window.addEventListener("keydown", arrowSelection);
+}
+body.addEventListener("load", moveReady());
