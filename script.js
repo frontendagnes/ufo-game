@@ -59,3 +59,39 @@ squere.forEach((item) => {
       }
     }
   };
+
+  function moveLeft() {
+    if (parseInt(moveEl.style.left) === 0) {
+      moveEl.style.left = 0 + "px";
+    } else {
+      moveEl.style.left = parseInt(moveEl.style.left) - 5 + "px";
+    }
+    mniamBall();
+  }
+  
+  function moveRight() {
+    if (parseInt(moveEl.style.left) >= windowWidth) {
+      moveEl.style.left = 0 + "px";
+    } else {
+      moveEl.style.left = parseInt(moveEl.style.left) + 5 + "px";
+    }
+    mniamBall();
+  }
+  
+  function moveUp() {
+    if (parseInt(moveEl.style.top) === 0) {
+      moveEl.style.top = 0 + "px";
+    } else {
+      moveEl.style.top = parseInt(moveEl.style.top) - 5 + "px";
+    }
+    mniamBall();
+  }
+  
+  function moveDown() {
+    if (parseInt(moveEl.style.top) >= windowHeight) {
+      moveEl.style.top = 0 + "px";
+    } else {
+      moveEl.style.top = parseInt(moveEl.style.top) + 5 + "px";
+    }
+    mniamBall();
+  }
