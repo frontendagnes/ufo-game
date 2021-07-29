@@ -95,3 +95,24 @@ squere.forEach((item) => {
     }
     mniamBall();
   }
+
+  function arrowSelection(e) {
+    switch (e.keyCode) {
+      case 37:
+        moveLeft();
+  
+        break;
+      case 39:
+        moveRight();
+  
+        break;
+      case 38:
+        moveUp();
+  
+        break;
+      case 40:
+        moveDown();
+  
+        break;
+    }
+  }
