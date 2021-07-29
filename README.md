@@ -6,6 +6,7 @@ Zabawa polega na przemieszczeniu ufoludka za pomocą strzałek i "usuwaniu " kul
 
 Prosta gra stworzona do zabawy dla dwulatka.
 
+W trakcie realizacji...
 ## Contribute
 
 - Source Code: https://github.com/zabula81/ufo-game
