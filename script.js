@@ -22,3 +22,40 @@ function randomActive() {
   //   squere[index].classList.add('active')
 }
 randomActive();
+
+squere.forEach((item) => {
+    if (item.classList.contains("active")) {
+      ball.push(item);
+    }
+  });
+  console.log(ball);
+  
+  const restart = () => {
+    // ball.forEach(item => {
+    //     item.classList.remove("active")
+    // })
+    // console.log("restart>>>", ball)
+    location.reload();
+  };
+  const mniamBall = () => {
+    for (let i = 0; i < ball.length; i++) {
+      // console.log(`left>> ${ball[i].offsetLeft} top>> ${ball[i].offsetTop} +10 ${ball[i].offsetTop + 10}`)
+  
+      let numberLeft = ball[i].offsetLeft;
+      numberLeft += 5 - (numberLeft % 5);
+  
+      let numberTop = ball[i].offsetTop;
+      numberTop += 5 - (numberTop % 5);
+  
+      // if (parseInt(moveEl.style.left) === ball[i].offsetLeft &&
+      //     (parseInt(moveEl.style.top) === ball[i].offsetTop)) {
+      //     ball[i].classList.remove("active")
+      // }
+      if (
+        parseInt(moveEl.style.left) === numberLeft &&
+        parseInt(moveEl.style.top) === numberTop
+      ) {
+        ball[i].classList.remove("active");
+      }
+    }
+  };
