@@ -9,8 +9,8 @@ Prosta gra stworzona do zabawy dla dwulatka.
 W trakcie realizacji...
 ## Contribute
 
-- Source Code: https://github.com/zabula81/ufo-game
-- Issue Tracker: https://github.com/zabula81/ufo-game/issues
+- Source Code: https://github.com/frontendagnes/ufo-game
+- Issue Tracker: https://github.com/frontendagnes/ufo-game/issues
 - View: https://frontendagnes.github.io/ufo-game/
 
 ### Author
