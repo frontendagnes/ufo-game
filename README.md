@@ -11,7 +11,7 @@ W trakcie realizacji...
 
 - Source Code: https://github.com/zabula81/ufo-game
 - Issue Tracker: https://github.com/zabula81/ufo-game/issues
-- View: https://zabula81.github.io/ufo-game/
+- View: https://frontendagnes.github.io/ufo-game/
 
 ### Author
 
